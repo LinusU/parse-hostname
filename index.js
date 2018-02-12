@@ -1,7 +1,7 @@
 const fs = require('fs')
 const data = new Set(fs.readFileSync('data.txt').toString().trim().split('|'))
 
-function getBreakPoints (hostname) {
+module.exports = function parse (hostname) {
   let breakPoints = [-1]
   let nextDotIdx = hostname.indexOf('.')
 
@@ -11,12 +11,6 @@ function getBreakPoints (hostname) {
   }
 
   breakPoints.push(hostname.length)
-
-  return breakPoints
-}
-
-module.exports = function parse (hostname) {
-  const breakPoints = getBreakPoints(hostname)
 
   function getRange (start, end) {
     return (start === end) ? '' : hostname.slice(breakPoints[start] + 1, breakPoints[end])
