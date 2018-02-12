@@ -4,10 +4,15 @@
   "license": "MIT",
   "repository": "LinusU/parse-hostname",
   "scripts": {
+    "prepare": "node prepare",
     "test": "standard && node test"
   },
   "devDependencies": {
     "got": "^8.1.0",
     "standard": "^10.0.3"
-  }
+  },
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ]
 }

@@ -1,5 +1,4 @@
-const fs = require('fs')
-const data = new Set(fs.readFileSync('data.txt').toString().trim().split('|'))
+const data = new Set('INSERT|DATA|HERE'.split('|'))
 
 module.exports = function parse (hostname) {
   let breakPoints = [-1]
